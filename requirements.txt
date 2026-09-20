@@ -1,0 +1,10 @@
+# Core
+pandas>=2.0.0
+openpyxl>=3.1.0          # read .xlsx
+XlsxWriter>=3.1.0        # write formatted .xlsx
+
+# Browser automation (needed only for short-link resolution)
+selenium>=4.15.0
+
+# Development
+pytest>=7.4.0

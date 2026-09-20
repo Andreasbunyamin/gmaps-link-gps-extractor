@@ -1,0 +1,21 @@
+# Install once:  pip install pre-commit && pre-commit install
+#
+# The nbstripout hook is the important one: it clears notebook outputs before
+# every commit. A saved output cell embeds the entire rendered table - every
+# row, link and coordinate - inside the .ipynb, which is the single easiest way
+# to publish data you meant to keep private.
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+        args: ["--maxkb=2000"]
+      - id: detect-private-key
+      - id: check-merge-conflict

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gmaps-gps"
+version = "1.0.0"
+description = "Extract latitude and longitude from Google Maps share links"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+    "XlsxWriter>=3.1.0",
+]
+
+[project.optional-dependencies]
+browser = ["selenium>=4.15.0"]
+dev = ["pytest>=7.4.0", "pre-commit>=3.5.0"]
+
+[project.scripts]
+gmaps-gps = "gmaps_gps.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

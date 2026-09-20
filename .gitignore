@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------------------
+# Data: deny by default, allow the synthetic sample only.
+# Drop a real workbook into data/ and git will simply not see it.
+# ---------------------------------------------------------------------------
+data/*
+!data/sample_tourist_places.xlsx
+!data/sample_tourist_places.csv
+!data/.gitkeep
+
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+!data/sample_tourist_places.xlsx
+!data/sample_tourist_places.csv
+
+# Generated results
+output/*
+!output/.gitkeep
+
+# ---------------------------------------------------------------------------
+# Credentials and secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+client_secrets.json
+credentials.json
+token.json
+service_account*.json
+mycreds.txt          # PyDrive2 writes the saved OAuth token here
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Notebooks
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Browser driver artefacts
+# ---------------------------------------------------------------------------
+chromedriver*
+*.deb
+geckodriver.log
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
